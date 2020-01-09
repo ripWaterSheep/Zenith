@@ -31,7 +31,7 @@ public class Settings {
                 + backwards + "\n"
                 + right + "\n"
                 + mouseTurn + "\n"
-                + mouseShoot+ "\n";
+                + mouseShoot + "\n";
 
         // attach a file to FileWriter
         File file = new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\settings.txt");
@@ -45,7 +45,7 @@ public class Settings {
         System.out.println("Writing successful");
         //close the file
         fw.close();
-        
+
         applySettings();
     }
 
@@ -55,27 +55,24 @@ public class Settings {
                 new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\defaultSettings.txt");
         Scanner sc = new Scanner(file);
 
-        for(int i=0; i< allSettings.length; i++) {
-            allSettings[i] = (int)sc.nextDouble();
+        for (int i = 0; i < allSettings.length; i++) {
+            allSettings[i] = (int) sc.nextDouble();
         }
     }
 
 
-    
     public static int[] readSettings() {
         return allSettings;
     }
 
-    
-    
 
-    private static void applySettings() throws IOException{
+    private static void applySettings() throws IOException {
         File file =
                 new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\settings.txt");
         Scanner sc = new Scanner(file);
 
-        for(int i=0; i< allSettings.length; i++) {
-            allSettings[i] = (int)sc.nextDouble();
+        for (int i = 0; i < allSettings.length; i++) {
+            allSettings[i] = (int) sc.nextDouble();
         }
     }
 }

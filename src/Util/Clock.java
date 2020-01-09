@@ -2,7 +2,7 @@ package Util;
 
 import java.util.ArrayList;
 
-import static java.lang.System.*;
+import static java.lang.System.currentTimeMillis;
 
 public class Clock {
     public static ArrayList<Clock> instances = new ArrayList<>();
@@ -24,14 +24,21 @@ public class Clock {
     }
 
 
-    public boolean isLapDone() { return lapDone; }
+    public boolean isLapDone() {
+        return lapDone;
+    }
 
-    public long getCurrTime() { return currTime; }
-    public long getLapStart() { return lapStart; }
+    public long getCurrTime() {
+        return currTime;
+    }
 
-    public int getAmtLapsDone() { return amtLapsDone; }
+    public long getLapStart() {
+        return lapStart;
+    }
 
-
+    public int getAmtLapsDone() {
+        return amtLapsDone;
+    }
 
 
     public void startClock() {
@@ -44,12 +51,14 @@ public class Clock {
 
 
     private void run() {
-        if(paused) { return; }
+        if (paused) {
+            return;
+        }
         lapDone = false;
 
         currTime = currentTimeMillis() - startTime;
 
-        if(currTime - lapStart >= lapPeriod) {
+        if (currTime - lapStart >= lapPeriod) {
             lapStart = currTime;
             amtLapsDone++;
             lapDone = true;
@@ -59,7 +68,7 @@ public class Clock {
 
 
     public static void runInstances() {
-        for(Clock c : instances)
+        for (Clock c : instances)
             c.run();
     }
 }

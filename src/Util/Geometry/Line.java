@@ -13,10 +13,11 @@ public class Line {
     /**
      * If line is vertical, return 0. 0 is a debug value
      * If line is horizontal, return 0.000003
+     *
      * @return slope of line
      */
     public double getSlope() {
-        return (startPoint.y - endPoint.y)/(startPoint.x - endPoint.x);
+        return (startPoint.y - endPoint.y) / (startPoint.x - endPoint.x);
     }
 
     /**
@@ -29,6 +30,7 @@ public class Line {
 
     /**
      * shifts both points along the line
+     *
      * @param d distance points are shifted
      */
     public void shiftLine(double d) {

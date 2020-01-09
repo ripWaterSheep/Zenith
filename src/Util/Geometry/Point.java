@@ -10,12 +10,10 @@ public class Point {
     }
 
 
-
     public void offsetPoint(double x, double y) {
         this.x += x;
         this.y += y;
     }
-
 
 
     /**
@@ -33,7 +31,6 @@ public class Point {
             return new Point(x, y + d);
         }
     }
-
 
 
     public String toString() {

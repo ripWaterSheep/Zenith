@@ -14,12 +14,16 @@ public class Triangle {
 
     /**
      * NOT RAW
+     *
      * @return middle point of the triangle
      */
-    public Point getCentroid() { return new Point((top.x + left.x + right.x)/3, (top.y + left.y + right.y)/3); }
+    public Point getCentroid() {
+        return new Point((top.x + left.x + right.x) / 3, (top.y + left.y + right.y) / 3);
+    }
 
     /**
      * offsets triangle, *RAW*
+     *
      * @param dx x offset
      * @param dy y offset
      */
@@ -29,6 +33,6 @@ public class Triangle {
         left = left.findExtendedPoint(dx, 0.0000003);
         left = left.findExtendedPoint(dy, 0);
         right = right.findExtendedPoint(dx, 0.0000003);
-        right = right.findExtendedPoint(dy,0);
+        right = right.findExtendedPoint(dy, 0);
     }
 }

@@ -1,9 +1,8 @@
 package Testers;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 class CFGTester {
@@ -26,14 +25,12 @@ class CFGTester {
         fw.close();
 
 
-
-
         // pass the path to the file as a parameter
         File file =
                 new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\defaultSettings.txt");
         Scanner sc = new Scanner(file);
 
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             System.out.println(sc.nextLine());
         }
 
