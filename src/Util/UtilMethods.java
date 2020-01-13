@@ -1,7 +1,8 @@
-package Util;
+package util;
 
-import Util.Geometry.Point;
-import Util.Geometry.Rectangle;
+import util.geometry.*;
+import util.geometry.Point;
+import util.geometry.Rectangle;
 
 import javax.swing.*;
 import java.awt.*;

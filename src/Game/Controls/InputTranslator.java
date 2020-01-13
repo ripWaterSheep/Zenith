@@ -1,4 +1,4 @@
-package Game.Controls;
+package game.controls;
 
 
 public class InputTranslator {

@@ -1,4 +1,4 @@
-package Util.Geometry;
+package util.geometry;
 
 public class Circle {
     public Point centerPoint;

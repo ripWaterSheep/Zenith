@@ -1,4 +1,4 @@
-package Util.Geometry;
+package util.geometry;
 
 import java.util.ArrayList;
 

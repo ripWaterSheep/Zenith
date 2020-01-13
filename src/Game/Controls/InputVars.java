@@ -1,7 +1,7 @@
-package Game.Controls;
+package game.controls;
 
 
-import Util.Geometry.Point;
+import util.geometry.Point;
 
 /**
  * Kinda cringe ngl

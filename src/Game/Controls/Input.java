@@ -1,4 +1,4 @@
-package Game.Controls;
+package game.controls;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -6,7 +6,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static Game.Controls.InputVars.*;
+import static game.controls.InputVars.*;
+
 
 public class Input {
     public static KeyAdapter keyAdapter = new KeyAdapter() {
