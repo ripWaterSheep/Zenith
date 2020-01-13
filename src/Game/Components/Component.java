@@ -30,7 +30,7 @@ public abstract class Component {
         this.height = height;
     }
 
-    
+
 
 
     protected String name;

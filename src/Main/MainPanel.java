@@ -14,13 +14,13 @@ public class MainPanel extends JPanel {
 
 
     public MainPanel() {
-        runner.setup(this, getGraphics());
+        runner.setup(this);
     }
 
 
     @Override
     public void paintComponent(Graphics g) {
-        runner.run();
+        runner.run(g);
 
         UtilMethods.sleep(10);
         repaint();

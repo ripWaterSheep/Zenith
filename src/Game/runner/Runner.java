@@ -17,15 +17,15 @@ public class Runner {
     private ArrayList<ArrayList<? extends Component>> allComponents = new ArrayList<>();
 
 
-    public void setup(JPanel panel, Graphics g) {
-        Component.createGraphics(g);
+    public void setup(JPanel panel) {
         Input.init(panel);
 
         allComponents.add(Structure.getStructures());
     }
 
 
-    public void run() {
+    public void run(Graphics g) {
+        Component.createGraphics(g);
         for (ArrayList<? extends Component> a : allComponents) {
             for (Component b : a) {
                 b.update();
