@@ -2,27 +2,38 @@ package game.components;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Structure extends Component {
 
+    private static ArrayList<Structure> structures = new ArrayList<>();
 
-    protected Structure(String name, Level level, World world, ImageIcon image, Color color, Shape shape, double x, double y) {
-        super(name, level, world, image, color, shape, x, y);
+    public static ArrayList<Structure> getStructures() {
+        return structures;
+    }
+
+
+    public Structure(String name, Level level, World world, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
+        super(name, level, world, image, color, isCircle, x, y, width, height);
+
+        structures.add(this);
     }
 
 
     @Override
-    protected void init() {
+    public void init() {
 
     }
 
     @Override
-    protected void update() {
+    public void update() {
 
     }
 
     @Override
-    protected void draw() {
-        if (Boolean.parseBoolean(/* TODO: ifNeeded() */ "enter me")) ;
+    public void draw() {
+        // if (Boolean.parseBoolean(/* TODO: ifNeeded() */ "enter me")) ;
+
+        g.fillRect((int) x, (int) y, (int) width, (int) height);
     }
 }

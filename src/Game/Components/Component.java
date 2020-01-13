@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 public abstract class Component {
 
-    public static ArrayList<? extends Component> components = new ArrayList<>();
-
 
     // graphics instance used by all components
     protected static Graphics g;
@@ -19,16 +17,20 @@ public abstract class Component {
     }
 
 
-    protected Component(String name, Level level, World world, ImageIcon image, Color color, Shape shape, double x, double y) {
+    protected Component(String name, Level level, World world, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
         this.name = name;
         this.level = level;
         this.world = world;
         this.image = image;
         this.color = color;
-        this.shape = shape;
+        this.isCircle = isCircle;
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;
     }
+
+    //
 
 
     protected String name;
@@ -41,7 +43,7 @@ public abstract class Component {
 
     protected Color color;
 
-    protected Shape shape;
+    protected boolean isCircle;
 
 
     // world location
@@ -51,15 +53,19 @@ public abstract class Component {
     protected double displayX;
     protected double displayY;
 
+    protected double width;
+    protected double height;
+
+
 
     protected boolean isNeeded() {
         return Boolean.parseBoolean(/* TODO: REPLACE ME */ "");
     }
 
 
-    protected abstract void init();
+    public abstract void init();
 
-    protected abstract void update(); // updating component fields
+    public abstract void update(); // updating component fields
 
-    protected abstract void draw();
+    public abstract void draw();
 }
