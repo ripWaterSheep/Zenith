@@ -1,4 +1,4 @@
-package Game.Settings;
+package settings;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,6 +25,9 @@ public class Settings {
     };
 
 
+    private static String settingsPath = ".\\src\\settings\\settings.txt";
+    private static String defaultSettingsPath = ".\\src\\settings\\defaultSettings.txt";
+
     public static void generateSettings(double forward, double left, double backwards, double right, double mouseTurn, double mouseShoot) throws IOException {
         String str = forward + "\n"
                 + left + "\n"
@@ -34,7 +37,7 @@ public class Settings {
                 + mouseShoot + "\n";
 
         // attach a file to FileWriter
-        File file = new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\settings.txt");
+        File file = new File(settingsPath);
         FileWriter fw = new FileWriter(file);
 
         // read character wise from string and write
@@ -52,7 +55,7 @@ public class Settings {
 
     public static void applyDefaultSettings() throws FileNotFoundException {
         File file =
-                new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\defaultSettings.txt");
+                new File(defaultSettingsPath);
         Scanner sc = new Scanner(file);
 
         for (int i = 0; i < allSettings.length; i++) {
@@ -66,9 +69,13 @@ public class Settings {
     }
 
 
+
+
+
+
     private static void applySettings() throws IOException {
         File file =
-                new File("C:\\Users\\neilm\\Documents\\intellij projects\\Zenith\\src\\Game\\Settings\\settings.txt");
+                new File(settingsPath);
         Scanner sc = new Scanner(file);
 
         for (int i = 0; i < allSettings.length; i++) {
