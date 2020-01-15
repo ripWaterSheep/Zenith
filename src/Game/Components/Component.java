@@ -52,12 +52,9 @@ public abstract class Component {
     protected double height;
 
 
-    private boolean needed;
 
-    protected void setNeeded() { needed = true; }
-    protected void setNotNeeded() { needed = false; }
 
-    public boolean isNeeded() { return needed; }
+
 
 
     public abstract void init();

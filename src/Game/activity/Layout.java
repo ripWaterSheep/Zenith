@@ -1,4 +1,4 @@
-package game.runner;
+package game.activity;
 
 import game.components.Level;
 import game.components.Structure;
