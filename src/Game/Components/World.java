@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class World {
 
-    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<? extends Component> allComponents) {
+    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends Component>> allComponents) {
         this.name = name;
         this.backgroundImage = backgroundImage;
         this.borderColor = borderColor;
@@ -30,7 +30,14 @@ public class World {
     private Point widthHeight;
 
 
-    private ArrayList<? extends Component> allComponents;
+    private ArrayList<ArrayList<? extends Component>> allComponents;
 
 
+    public void loadWorld() {
+        for(ArrayList<? extends Component> componentsList : allComponents) {
+            for(Component e : componentsList) {
+                e.draw();
+            }
+        }
+    }
 }

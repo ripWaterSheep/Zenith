@@ -32,7 +32,7 @@ public class Structure extends Component {
 
     @Override
     public void draw() {
-        // if (Boolean.parseBoolean(/* TODO: ifNeeded() */ "enter me")) ;
+        if(!isNeeded()) return;
 
         g.fillRect((int) x, (int) y, (int) width, (int) height);
     }

@@ -3,8 +3,8 @@ package game.components;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class Level {
-
+public class Level extends JPanel {
+    private static ArrayList<Level> levelList = new ArrayList<>();
 
     public Level(String name, ImageIcon menuImage, ArrayList<World> worlds) {
         this.name = name;
