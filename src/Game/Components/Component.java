@@ -2,9 +2,6 @@ package game.components;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Area;
-import java.awt.geom.Point2D;
-import java.util.ArrayList;
 
 public abstract class Component {
 
@@ -31,8 +28,6 @@ public abstract class Component {
     }
 
 
-
-
     protected String name;
 
     protected Level level;
@@ -55,7 +50,6 @@ public abstract class Component {
 
     protected double width;
     protected double height;
-
 
 
     protected boolean isNeeded() {

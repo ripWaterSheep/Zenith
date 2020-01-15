@@ -17,7 +17,6 @@ public class World {
     }
 
 
-
     private String name;
 
     private ImageIcon backgroundImage;
@@ -32,7 +31,6 @@ public class World {
 
 
     private ArrayList<? extends Component> allComponents;
-
 
 
 }

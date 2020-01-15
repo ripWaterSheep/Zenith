@@ -69,10 +69,6 @@ public class Settings {
     }
 
 
-
-
-
-
     private static void applySettings() throws IOException {
         File file =
                 new File(settingsPath);

@@ -22,5 +22,7 @@ public class Level {
 
     private World currWorld;
 
-    public World neededWorld() { return currWorld; }
+    public World neededWorld() {
+        return currWorld;
+    }
 }

@@ -5,7 +5,6 @@ import game.components.Structure;
 import game.components.World;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Layout {
 

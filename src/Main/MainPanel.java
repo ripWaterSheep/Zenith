@@ -12,7 +12,6 @@ public class MainPanel extends JPanel {
     Runner runner = new Runner();
 
 
-
     public MainPanel() {
         runner.setup(this);
     }

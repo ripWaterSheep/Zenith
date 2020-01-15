@@ -1,6 +1,5 @@
 package util;
 
-import util.geometry.*;
 import util.geometry.Point;
 import util.geometry.Rectangle;
 
