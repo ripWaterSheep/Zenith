@@ -13,9 +13,7 @@ public class World {
         this.backgroundImage = backgroundImage;
         this.borderColor = borderColor;
         this.widthHeight = widthHeight;
-
-
-
+        this.allComponents = allComponents;
     }
 
 
@@ -33,6 +31,7 @@ public class World {
     private Point widthHeight;
 
 
+    private ArrayList<? extends Component> allComponents;
 
 
 
