@@ -1,7 +1,6 @@
-package main;
+package util;
 
 public class Window {
-
     public static final int height = 1920;
     public static final int width = 1080;
 

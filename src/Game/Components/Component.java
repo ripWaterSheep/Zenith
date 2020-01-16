@@ -13,11 +13,17 @@ public abstract class Component {
         Component.g = g;
     }
 
+    /*
+    instead of adding an new instance of component to an ArrayList, we will create an ArrayList that we will pass as an argument into the
+    World parameter. :o
+    Component and shit like that CANNOT be linked to anything else besides a simple drawing of a sprite/struct etc. That is the point of this class,
+    to have components easily drawable.
 
-    protected Component(String name, Level level, World world, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
+    this is why my code is more alpha than josh's
+    flexed on
+     */
+    protected Component(String name, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
         this.name = name;
-        this.level = level;
-        this.world = world;
         this.image = image;
         this.color = color;
         this.isCircle = isCircle;
@@ -30,9 +36,6 @@ public abstract class Component {
 
     protected String name;
 
-    protected Level level;
-
-    protected World world;
 
     protected ImageIcon image;
 

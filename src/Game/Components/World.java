@@ -7,10 +7,6 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class World {
-    private static ArrayList<World> worlds = new ArrayList<>();
-
-    public static ArrayList<World> getWorlds() { return worlds; }
-
 
 
 
@@ -20,7 +16,9 @@ public class World {
         this.borderColor = borderColor;
         this.widthHeight = widthHeight;
         currWorldComponents = allComponents;
+
     }
+
 
 
     private String name;
@@ -35,19 +33,29 @@ public class World {
      */
     private Point widthHeight;
 
-    private ArrayList<ArrayList<? extends Component>> currWorldComponents = new ArrayList<>();
-
-    private boolean needed;
+    private ArrayList<ArrayList<? extends Component>> currWorldComponents;
 
 
 
 
-    public void runWorld() {
-        for(ArrayList<? extends Component> componentsList : currWorldComponents) {
-            for(Component e : componentsList) {
-                e.update();
-                e.draw();
+    public void initWorld() {
+        for(ArrayList<? extends Component> cList : currWorldComponents) {
+            for(Component c : cList) {
+                c.init();
             }
         }
     }
+
+
+    public void updateWorld() {
+        for(ArrayList<? extends Component> cList : currWorldComponents) {
+            for(Component c : cList) {
+                c.update();
+                c.draw();
+            }
+        }
+    }
+
+
+
 }
