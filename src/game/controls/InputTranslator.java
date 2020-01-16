@@ -1,4 +1,4 @@
-package gamee.controols;
+package game.controls;
 
 
 public class InputTranslator {

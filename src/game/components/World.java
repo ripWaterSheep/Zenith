@@ -1,4 +1,4 @@
-package gamee.componenets;
+package game.components;
 
 import util.geometry.Point;
 

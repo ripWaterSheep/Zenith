@@ -1,4 +1,4 @@
-package gamee.activity;
+package game.activity;
 
 
 public class Activity {

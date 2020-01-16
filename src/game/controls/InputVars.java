@@ -1,4 +1,4 @@
-package gamee.controols;
+package game.controls;
 
 
 import util.geometry.Point;
