@@ -55,8 +55,9 @@ public abstract class Component {
     protected double height;
 
 
-
-
+    /**
+     * TODO: IMPLEMENT ABSTRACT VOID FOR RESETTING COMPONENT TO BASE SETTINGS (eg. if player dies and world needs to reset)
+     */
 
 
 
