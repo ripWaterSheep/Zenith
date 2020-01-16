@@ -16,6 +16,7 @@ public class Activity {
     private Layout layout = new Layout();
 
 
+
     private int currLevelIndex = 0;
 
     public void nextLevel() {
@@ -32,7 +33,10 @@ public class Activity {
 
 
 
+
+
     public void init(JPanel panel, Graphics g) {
+        setLevel(0);
         Input.init(panel); // listeners
         Component.createGraphics(g); // give graphics instance to component
 
@@ -43,7 +47,4 @@ public class Activity {
     public void run() {
         getLevels().get(currLevelIndex).runLevel();
     }
-
-
-
 }
