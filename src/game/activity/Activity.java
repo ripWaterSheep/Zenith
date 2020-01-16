@@ -35,10 +35,9 @@ public class Activity {
 
 
 
-    public void init(JPanel panel, Graphics g) {
+    public void init(JPanel panel) {
         setLevel(0);
         Input.init(panel); // listeners
-        Component.createGraphics(g); // give graphics instance to component
 
         getLevels().get(currLevelIndex).initLevel();
     }

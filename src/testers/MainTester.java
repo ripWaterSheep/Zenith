@@ -19,7 +19,7 @@ class MainTesterPanel extends JPanel {
     private Activity mainActivity = new Activity();
 
     MainTesterPanel() {
-        mainActivity.init(this, getGraphics());
+        mainActivity.init(this);
     }
 
 
