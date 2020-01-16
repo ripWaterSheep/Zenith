@@ -1,6 +1,6 @@
-package main;
+package mainn;
 
-import game.activity.Activity;
+import gamee.activity.Activity;
 import util.UtilMethods;
 
 import javax.swing.*;

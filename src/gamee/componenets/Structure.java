@@ -1,8 +1,7 @@
-package game.components;
+package gamee.componenets;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Structure extends Component {
 

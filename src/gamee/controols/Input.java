@@ -1,4 +1,4 @@
-package game.controls;
+package gamee.controols;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static game.controls.InputVars.*;
+import static gamee.controols.InputVars.*;
 
 
 public class Input {

@@ -1,4 +1,4 @@
-package game.components;
+package gamee.componenets;
 
 import javax.swing.*;
 import java.awt.*;

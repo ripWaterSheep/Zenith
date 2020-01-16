@@ -1,4 +1,4 @@
-package game.components;
+package gamee.componenets;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -35,8 +35,8 @@ public class Level {
 
 
 
-    
-    public void initLevel() {
+
+        public void initLevel() {
         currWorld.initWorld();
     }
 

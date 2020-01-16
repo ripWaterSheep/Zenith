@@ -1,8 +1,8 @@
-package game.activity;
+package gamee.activity;
 
-import game.components.Level;
-import game.components.Structure;
-import game.components.World;
+import gamee.componenets.Level;
+import gamee.componenets.Structure;
+import gamee.componenets.World;
 
 import java.awt.*;
 
