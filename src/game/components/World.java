@@ -6,8 +6,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class World {
 
+/**
+ * World is basically a glorified ArrayList of Structures
+ *
+ * In actuality, a world is what is displayed on screen at one time, which is a bunch of components
+ *
+ * Used for managing structures
+ */
+public class World {
 
 
     public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends Component>> allComponents) {
