@@ -33,6 +33,15 @@ public class Structure extends Component {
     @Override
     public void draw() {
         g.setColor(color);
-        g.fillRect((int) x, (int) y, (int) width, (int) height);
+
+        if(image != null) {
+            g.drawImage(image.getImage(), (int) x, (int) y, null);
+        } else if(isCircle) {
+            g.fillOval((int) x, (int) y, (int) width, (int) height);
+        } else {
+            g.fillRect((int) x, (int) y, (int) width, (int) height);
+        }
     }
+
+
 }

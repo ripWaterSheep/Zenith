@@ -53,7 +53,22 @@ public class Activity {
         Clock.runInstances();
 
 
-        if(clock.oneLapDone()) getLevels().get(currLevelIndex).setWorld(1);
-        
+        if(clock.getAmtLapsDone() == 1) getLevels().get(currLevelIndex).setWorld(1);
+        if(clock.getAmtLapsDone() == 2) {
+            setLevel(1);
+        }
+
+        if(clock.getAmtLapsDone() == 3) {
+            getLevels().get(currLevelIndex).setWorld(1);
+        }
+
+        if(clock.getAmtLapsDone() == 4) {
+            setLevel(2);
+        }
+
+        if(clock.getAmtLapsDone() == 5) {
+            setLevel(0);
+        }
+
     }
 }

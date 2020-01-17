@@ -6,6 +6,7 @@ import game.components.Level;
 import game.components.Structure;
 import game.components.World;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -41,6 +42,15 @@ public class Layout {
         add(new World("the other super sad world", null, null, null, new ArrayList<>() {{
             add(new ArrayList<>() {{
                 add(new Structure("pepehands", null, Color.GRAY, false, 0, 0, 800, 800));
+            }});
+        }}));
+    }});
+
+
+    Level thirdTestLevel = new Level("the third sad level", null, new ArrayList<>() {{
+        add(new World("the fiftieth world", null, null, null, new ArrayList<>() {{
+            add(new ArrayList<>() {{
+                add(new Structure("lolxd", new ImageIcon("./res/images/BattleCruiser.png"), null, false, 400, 400, 0, 0));
             }});
         }}));
     }});
