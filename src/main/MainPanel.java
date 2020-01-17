@@ -19,6 +19,9 @@ public class MainPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
+        g.setColor(Color.WHITE);
+        g.fillRect(0,0,800,800);
+
         Component.createGraphics(g);
 
         activity.run();

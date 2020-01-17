@@ -40,6 +40,7 @@ public class Clock {
         return amtLapsDone;
     }
 
+    public boolean oneLapDone() { return getAmtLapsDone() > 0; }
 
     public void startClock() {
         paused = false;

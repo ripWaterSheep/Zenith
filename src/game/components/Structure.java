@@ -32,6 +32,7 @@ public class Structure extends Component {
 
     @Override
     public void draw() {
+        g.setColor(color);
         g.fillRect((int) x, (int) y, (int) width, (int) height);
     }
 }

@@ -9,6 +9,7 @@ import java.awt.*;
 public class UtilMethods {
 
     /**
+     * Used for more efficient coding with testers
      * @param container Panel that the frame will run
      */
     public static void runFrame(Container container) {
@@ -24,7 +25,6 @@ public class UtilMethods {
 
     /**
      * sleeps the thread
-     *
      * @param ms milliseconds
      */
     public static void sleep(long ms) {
@@ -35,10 +35,25 @@ public class UtilMethods {
     }
 
 
+    /**
+     * detecting if a click was in a rect
+     * @param point clickPoint
+     * @param left left x
+     * @param top top y
+     * @param right right x
+     * @param bottom bottom y
+     * @return whether or not it was clicked inside that rectangle
+     */
     public static boolean clickedInRect(Point point, double left, double top, double right, double bottom) {
         return point.x > left && point.x < right && point.y < bottom && point.y > top;
     }
 
+    /**
+     * same thing as the
+     * @param point
+     * @param r
+     * @return
+     */
     public static boolean clickedInRect(Point point, Rectangle r) {
         return clickedInRect(point, r.left.startPoint.x, r.top.startPoint.y, r.right.startPoint.x, r.bottom.startPoint.y);
     }
