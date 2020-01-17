@@ -1,12 +1,10 @@
 package game.activity;
 
 
-import game.components.Component;
-import game.components.Level;
+import game.components.handlers.Level;
 import game.components.Structure;
-import game.components.World;
+import game.components.handlers.World;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -30,29 +28,5 @@ public class Layout {
         }
     });
 
-
-
-    Level secondTestLevel = new Level("That other level no one cares about", null, new ArrayList<>() {{
-        add(new World("The sad world", null, null, null, new ArrayList<>() {
-            {
-                add(new ArrayList<>() {{
-                    add(new Structure("pepega clap", null, Color.BLUE, true, 200, 200, 200, 200));
-                }});
-            }}));
-        add(new World("the other super sad world", null, null, null, new ArrayList<>() {{
-            add(new ArrayList<>() {{
-                add(new Structure("pepehands", null, Color.GRAY, false, 0, 0, 800, 800));
-            }});
-        }}));
-    }});
-
-
-    Level thirdTestLevel = new Level("the third sad level", null, new ArrayList<>() {{
-        add(new World("the fiftieth world", null, null, null, new ArrayList<>() {{
-            add(new ArrayList<>() {{
-                add(new Structure("lolxd", new ImageIcon("./res/images/BattleCruiser.png"), null, false, 400, 400, 0, 0));
-            }});
-        }}));
-    }});
 
 }

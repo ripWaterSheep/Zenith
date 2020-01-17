@@ -1,6 +1,7 @@
-package game.components;
+package game.components.handlers;
 
-import javax.swing.*;
+import game.components.Structure;
+
 import java.util.ArrayList;
 
 
@@ -21,24 +22,29 @@ public class Level {
     public static ArrayList<Level> getLevels() { return levels; }
 
 
-    public Level(String name, ImageIcon menuImage, ArrayList<World> worlds) {
+
+
+
+    /**
+     *
+     * @param name used for identifying the order of the level
+     * @param menuStructure structure used for displaying the menu
+     * @param worlds ArrayList of worlds in this level
+     */
+    public Level(String name, Structure menuStructure, ArrayList<World> worlds) {
         this.name = name;
-        this.menuImage = menuImage;
+        this.menuStructure = menuStructure;
         this.worlds = worlds;
 
         levels.add(this);
     }
 
-
+    private Structure menuStructure;
 
 
 
 
     private String name;
-
-    private ImageIcon menuImage;
-
-
 
 
     private ArrayList<World> worlds;
@@ -61,5 +67,9 @@ public class Level {
 
     public void runLevel() {
         getCurrWorld().updateWorld();
+    }
+
+    public void runMenuComponent() {
+        menuStructure.draw();
     }
 }

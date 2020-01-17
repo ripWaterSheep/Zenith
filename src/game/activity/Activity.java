@@ -1,24 +1,31 @@
 package game.activity;
 
 
-import game.components.Component;
+import game.components.handlers.Level;
 import game.controls.Input;
 import util.Clock;
 
 import javax.swing.*;
-import java.awt.*;
 
 
-
-import static game.components.Level.*;
+import static game.components.handlers.Level.*;
 
 public class Activity {
 
     private Layout layout = new Layout();
 
+    public states ourStates = states.MENU;
+    private enum states {
+        MENU,
+        LEVEL_SELECT,
+        SETTINGS,
+        GAME,
+    }
 
 
     private int currLevelIndex = 0;
+
+
 
     public void nextLevel() {
         if (currLevelIndex == getLevels().size()) {
@@ -40,35 +47,24 @@ public class Activity {
         setLevel(0);
         Input.init(panel); // listeners
 
-        getLevels().get(currLevelIndex).initLevel();
+
+
+        for(Level l : getLevels()) {
+            l.initLevel();
+        }
 
         clock.startClock();
     }
 
 
+
     Clock clock = new Clock(5000);
+
     public void run() {
-        getLevels().get(currLevelIndex).runLevel();
+        switch (ourStates) {
 
-        Clock.runInstances();
+            case MENU:
 
-
-        if(clock.getAmtLapsDone() == 1) getLevels().get(currLevelIndex).setWorld(1);
-        if(clock.getAmtLapsDone() == 2) {
-            setLevel(1);
         }
-
-        if(clock.getAmtLapsDone() == 3) {
-            getLevels().get(currLevelIndex).setWorld(1);
-        }
-
-        if(clock.getAmtLapsDone() == 4) {
-            setLevel(2);
-        }
-
-        if(clock.getAmtLapsDone() == 5) {
-            setLevel(0);
-        }
-
     }
 }

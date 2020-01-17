@@ -14,7 +14,7 @@ public class UtilMethods {
      */
     public static void runFrame(Container container) {
         JFrame frame = new JFrame("Zenith");
-        frame.setSize(800, 800);
+        frame.setSize(1366, 768);
         frame.setLocation(0, 0);
         frame.setResizable(false);
         frame.setContentPane(container);

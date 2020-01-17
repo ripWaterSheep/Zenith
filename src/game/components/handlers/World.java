@@ -1,5 +1,6 @@
-package game.components;
+package game.components.handlers;
 
+import game.components.Component;
 import util.geometry.Point;
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 public class World {
 
 
-    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends Component>> allComponents) {
+    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends game.components.Component>> allComponents) {
         this.name = name;
         this.backgroundImage = backgroundImage;
         this.borderColor = borderColor;
@@ -40,14 +41,14 @@ public class World {
      */
     private Point widthHeight;
 
-    private ArrayList<ArrayList<? extends Component>> currWorldComponents;
+    private ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
 
 
 
 
     public void initWorld() {
-        for(ArrayList<? extends Component> cList : currWorldComponents) {
-            for(Component c : cList) {
+        for(ArrayList<? extends game.components.Component> cList : currWorldComponents) {
+            for(game.components.Component c : cList) {
                 c.init();
             }
         }
@@ -55,7 +56,7 @@ public class World {
 
 
     public void updateWorld() {
-        for(ArrayList<? extends Component> cList : currWorldComponents) {
+        for(ArrayList<? extends game.components.Component> cList : currWorldComponents) {
             for(Component c : cList) {
                 c.update();
                 c.draw();
