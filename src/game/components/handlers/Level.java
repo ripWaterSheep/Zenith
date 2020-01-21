@@ -27,8 +27,8 @@ public class Level {
 
     /**
      *
-     * @param name used for identifying the order of the level
-     * @param menuStructure structure used for displaying the menu
+     * @param name used for identifying the level
+     * @param menuStructure structure used for displaying in the level select menu
      * @param worlds ArrayList of worlds in this level
      */
     public Level(String name, Structure menuStructure, ArrayList<World> worlds) {
@@ -41,6 +41,9 @@ public class Level {
 
     private Structure menuStructure;
 
+    public Structure getMenuStructure() {
+        return menuStructure;
+    }
 
 
 

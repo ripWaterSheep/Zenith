@@ -3,16 +3,15 @@ package game.activity;
 
 import game.components.handlers.Level;
 import game.controls.Input;
-import game.controls.InputTranslator;
-import game.controls.InputVars;
 import util.Clock;
-import util.UtilMethods;
-import util.geometry.Point;
 
 import javax.swing.*;
 
 
 import static game.components.handlers.Level.*;
+import static game.components.Menu.*;
+import static game.controls.InputVars.*;
+import static util.UtilMethods.*;
 
 public class Activity {
 
@@ -23,6 +22,7 @@ public class Activity {
         MENU,
         LEVEL_SELECT,
         SETTINGS,
+        SHOP,
         GAME,
     }
 
@@ -43,9 +43,14 @@ public class Activity {
     public int getCurrLevelIndex() { return currLevelIndex; }
 
 
-    private void checkForMenuClicks() {
-        if (InputVars.leftClickPoint != null) {
-
+    private void checkForLevelClicks() {
+        int levelClickCounter = 0;
+        for (Level l : getLevels()) {
+            if (clickedInRect(leftClickPoint, l.getMenuStructure().getRect())) {
+                setLevel(levelClickCounter);
+                ourStates = states.GAME;
+            }
+            levelClickCounter++;
         }
     }
 
@@ -68,17 +73,36 @@ public class Activity {
 
     Clock clock = new Clock(5000);
 
+
     public void run() {
         switch (ourStates) {
 
             case MENU:
-                getLevels().get(0).runMenuComponent();
+                menu.run();
+
+                switch (menu.getOurRequestedScreen()) {
+                    case SHOP:
+                        ourStates = states.SHOP;
+                        break;
+
+                    case SETTINGS:
+                        ourStates = states.SETTINGS;
+                        break;
+
+                    case LEVEL_SELECT:
+                        ourStates = states.LEVEL_SELECT;
+                        break;
+
+                    default:
+                        break;
+                }
 
 
                 break;
 
 
             case LEVEL_SELECT:
+                checkForLevelClicks();
                 for (Level l : getLevels()) {
                     l.runMenuComponent();
                 }

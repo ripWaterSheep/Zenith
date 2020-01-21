@@ -1,38 +1,41 @@
 package util.geometry;
 
+
 public class Triangle {
-    public Point top;
-    public Point left;
-    public Point right;
+    public Point top, left, right;
 
-    public Triangle(Point topPoint, Point leftBasePoint, Point rightBasePoint) {
-        this.top = topPoint;
-        this.left = leftBasePoint;
-        this.right = rightBasePoint;
+    public Triangle(Point top, Point left, Point right) {
+        this.top = top;
+        this.left = left;
+        this.right = right;
     }
 
 
-    /**
-     * NOT RAW
-     *
-     * @return middle point of the triangle
-     */
-    public Point getCentroid() {
-        return new Point((top.x + left.x + right.x) / 3, (top.y + left.y + right.y) / 3);
+    private double centroidX() {
+        return (top.x + left.x + right.x) / 3;
     }
 
-    /**
-     * offsets triangle, *RAW*
-     *
-     * @param dx x offset
-     * @param dy y offset
-     */
-    public void offsetTriangle(double dx, double dy) {
-        top = top.findExtendedPoint(dx, 0.0000000003);
-        top = top.findExtendedPoint(dy, 0);
-        left = left.findExtendedPoint(dx, 0.0000003);
-        left = left.findExtendedPoint(dy, 0);
-        right = right.findExtendedPoint(dx, 0.0000003);
-        right = right.findExtendedPoint(dy, 0);
+    private double centroidY() {
+        return (top.y + left.y + right.y) / 3;
+    }
+
+    protected Point centroid() {
+        return new Point(centroidX(), centroidY());
+    }
+
+
+    protected Point[] allVertices() {
+        return new Point[]{
+                top,
+                left,
+                right
+        };
+    }
+
+
+    protected void offset(double x, double y) {
+        for (int i = 0; i < 3; i++) {
+            allVertices()[i].offsetPoint(x, y);
+        }
     }
 }

@@ -1,8 +1,5 @@
 package util;
 
-import util.geometry.Point;
-import util.geometry.Rectangle;
-
 import javax.swing.*;
 import java.awt.*;
 

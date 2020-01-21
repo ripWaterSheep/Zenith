@@ -1,27 +1,30 @@
 package util.geometry;
 
 public class Point {
-    public double x;
-    public double y;
+    public double x, y;
 
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
+    public Point() {
+        x = 0;
+        y = 0;
+    }
 
-    public void offsetPoint(double x, double y) {
-        this.x += x;
-        this.y += y;
+    void offsetPoint(double dx, double dy) {
+        x += dx;
+        y += dy;
     }
 
 
     /**
-     * @param d distance along line to extended point
+     * @param d distance of extended point
      * @param m slope of line
-     * @return Point along line with slope m that is d away from THIS point
+     * @return new point that is d distance down the line with slope m
      */
-    public Point findExtendedPoint(double d, double m) {
+    Point findExtendedPoint(double d, double m) {
         if (m != 0) {
             double newX = x + (d / Math.sqrt(1 + m * m));
             double newY = m * (newX - x) + y;
@@ -33,7 +36,8 @@ public class Point {
     }
 
 
+    @Override
     public String toString() {
-        return "(" + x + "," + y + ")";
+        return " (" + x + "," + y + ")";
     }
 }

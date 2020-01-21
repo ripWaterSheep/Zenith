@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 public class Layout {
 
+//
+//    Menu ourMenu = new Menu("Main Menu", new ArrayList<>() {{
+//        add(new Rectangle(new Line(new Point())))
+//    }});
 
 
     Level testLevel = new Level("Test Level", null, new ArrayList<>() {{

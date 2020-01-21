@@ -1,49 +1,78 @@
 package util.geometry;
 
+
 public class Rectangle {
-    public Line top, left, right, bottom;
+    public Line topLine;
+    public Line bottomLine;
+    public Line leftLine;
+    public Line rightLine;
 
     public Rectangle(Line topLine, double width) {
-        Point topLeft = topLine.startPoint;
-        Point topRight = topLine.endPoint;
-        Point bottomLeft = topLeft.findExtendedPoint(width, topLine.getSlope());
-        Point bottomRight = topRight.findExtendedPoint(width, topLine.getSlope());
+        this.topLine = topLine;
 
-        top = topLine;
-        left = new Line(topLeft, bottomLeft);
-        right = new Line(topRight, bottomRight);
-        bottom = new Line(bottomLeft, bottomRight);
+        bottomLine = topLine.getParallelLine(width);
+
+        leftLine = new Line(bottomLine.startPoint, topLine.startPoint);
+        rightLine = new Line(bottomLine.endPoint, topLine.endPoint);
     }
 
 
-    public Point centroid() {
-        return new Point((top.startPoint.x + bottom.endPoint.x) / 2, (top.startPoint.y + bottom.endPoint.y) / 2);
-    }
+    protected void shiftRect(double d) {
+        if (topLine.getHeading() > 90 && topLine.getHeading() <= 270) {
+            topLine.shiftLine(-d);
+            bottomLine.shiftLine(-d);
+        } else {
+            topLine.shiftLine(d);
+            bottomLine.shiftLine(d);
+        }
 
-    public double getHeight() {
-        return bottom.endPoint.y - top.endPoint.y;
-    }
-
-    public double getWidth() {
-        return right.endPoint.x - left.endPoint.x;
-    }
-
-    public double topLeftX() {
-        return top.startPoint.x;
-    }
-
-    public double topLeftY() {
-        return top.startPoint.y;
     }
 
 
-    public void shiftRectangle(double d) {
-        top.shiftLine(d);
-        bottom.shiftLine(d);
-
-        left = new Line(top.startPoint, bottom.startPoint);
-        right = new Line(top.endPoint, bottom.endPoint);
+    public void shiftAllPoints(double d, double m, boolean isLeft) {
+        if (isLeft) {
+            topLine.startPoint = topLine.startPoint.findExtendedPoint(d, m);
+            topLine.endPoint = topLine.endPoint.findExtendedPoint(d, m);
+            bottomLine.startPoint = bottomLine.startPoint.findExtendedPoint(d, m);
+            bottomLine.endPoint = bottomLine.endPoint.findExtendedPoint(d, m);
+        } else {
+            topLine.startPoint = topLine.startPoint.findExtendedPoint(-d, m);
+            topLine.endPoint = topLine.endPoint.findExtendedPoint(-d, m);
+            bottomLine.startPoint = bottomLine.startPoint.findExtendedPoint(-d, m);
+            bottomLine.endPoint = bottomLine.endPoint.findExtendedPoint(-d, m);
+        }
     }
 
+
+    protected int[] xPoints() {
+        return new int[]{
+                (int) topLine.startPoint.x,
+                (int) topLine.endPoint.x,
+                (int) bottomLine.endPoint.x,
+                (int) bottomLine.startPoint.x,
+        };
+    }
+
+
+    protected int[] yPoints() {
+        return new int[]{
+                (int) topLine.startPoint.y,
+                (int) topLine.endPoint.y,
+                (int) bottomLine.endPoint.y,
+                (int) bottomLine.startPoint.y,
+        };
+    }
+
+
+    private void updateLeftAndRight() {
+        leftLine = new Line(topLine.startPoint, bottomLine.startPoint);
+        rightLine = new Line(topLine.endPoint, bottomLine.endPoint);
+    }
+
+
+    @Override
+    public String toString() {
+        return topLine + " , " + bottomLine;
+    }
 
 }

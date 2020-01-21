@@ -1,7 +1,6 @@
 package game.components.handlers;
 
 import game.components.Component;
-import util.geometry.Point;
 
 import javax.swing.*;
 import java.awt.*;
