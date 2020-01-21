@@ -41,7 +41,7 @@ public class World {
      */
     private Point widthHeight;
 
-    private ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
+    public ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
 
 
 

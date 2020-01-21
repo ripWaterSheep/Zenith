@@ -7,7 +7,7 @@ public abstract class Component {
 
 
     // graphics instance used by all components
-    protected static Graphics g;
+    public static Graphics g;
 
     public static void createGraphics(Graphics g) {
         Component.g = g;

@@ -3,7 +3,11 @@ package game.activity;
 
 import game.components.handlers.Level;
 import game.controls.Input;
+import game.controls.InputTranslator;
+import game.controls.InputVars;
 import util.Clock;
+import util.UtilMethods;
+import util.geometry.Point;
 
 import javax.swing.*;
 
@@ -39,7 +43,11 @@ public class Activity {
     public int getCurrLevelIndex() { return currLevelIndex; }
 
 
+    private void checkForMenuClicks() {
+        if (InputVars.leftClickPoint != null) {
 
+        }
+    }
 
 
 
@@ -64,6 +72,18 @@ public class Activity {
         switch (ourStates) {
 
             case MENU:
+                getLevels().get(0).runMenuComponent();
+
+
+                break;
+
+
+            case LEVEL_SELECT:
+                for (Level l : getLevels()) {
+                    l.runMenuComponent();
+                }
+
+                break;
 
         }
     }
