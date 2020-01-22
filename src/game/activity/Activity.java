@@ -49,8 +49,6 @@ public class Activity {
             if (l.getMenuStructure().getRect().contains(leftClickPoint)) {
                 setLevel(levelClickCounter);
                 ourStates = states.GAME;
-
-                System.out.println(l.getName() + "clicked on");
             }
 
             levelClickCounter++;
@@ -60,11 +58,16 @@ public class Activity {
 
     private void debugTelemetry() {
         try {
+            System.out.println("-------------------------------------");
             System.out.println();
             System.out.println("Status: " + ourStates);
             System.out.println("Menu states: " + menu.getOurRequestedScreen());
             System.out.println("Current level: " + getLevels().get(currLevelIndex).getName());
             System.out.println("Current world: " + getLevels().get(currLevelIndex).getCurrWorld().getName());
+            System.out.println();
+
+            System.out.println("Click coords" + leftClickPoint);
+            System.out.println("Level 1 rectangle" + getLevels().get(0).getMenuStructure().getRect());
 
         } catch (Exception e) {
             System.out.println("something went wrong");
@@ -138,5 +141,7 @@ public class Activity {
                 getLevels().get(currLevelIndex).runLevel();
 
         }
+
     }
+
 }

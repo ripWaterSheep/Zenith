@@ -26,7 +26,7 @@ public class Layout {
 
 
     Level firstLevel = new Level("Level 1",
-            new Structure("Level 1 Menu Image", new ImageIcon("./res/images/Lvl1.png"), null, false, 100, 100, 0, 0),
+            new Structure("Level 1 Menu Image", new ImageIcon("./res/images/Lvl1.png"), null, false, 100, 100, 268, 177),
             new ArrayList<>() {{
                 add(new World("First World", null, null, new Point(1920, 1080), new ArrayList<>() {{
                     new Structure("Level 1 Structure", null, Color.BLACK, true, 400, 400, 200, 200);
