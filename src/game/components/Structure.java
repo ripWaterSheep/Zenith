@@ -1,7 +1,12 @@
 package game.components;
 
+import util.geometry.Line;
+import util.geometry.Point;
+import util.geometry.Rectangle;
+
 import javax.swing.*;
 import java.awt.*;
+
 
 public class Structure extends Component {
 
