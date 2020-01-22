@@ -3,6 +3,9 @@ package util;
 import javax.swing.*;
 import java.awt.*;
 
+import util.geometry.Rectangle;
+import util.geometry.Point;
+
 public class UtilMethods {
 
     /**
@@ -52,7 +55,7 @@ public class UtilMethods {
      * @return
      */
     public static boolean clickedInRect(Point point, Rectangle r) {
-        return clickedInRect(point, r.left.startPoint.x, r.top.startPoint.y, r.right.startPoint.x, r.bottom.startPoint.y);
+        return clickedInRect(point, r.leftLine.startPoint.x, r.topLine.startPoint.y, r.rightLine.startPoint.x, r.bottomLine.startPoint.y);
     }
 
 

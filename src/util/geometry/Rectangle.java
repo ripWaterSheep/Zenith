@@ -12,8 +12,7 @@ public class Rectangle {
 
         bottomLine = topLine.getParallelLine(width);
 
-        leftLine = new Line(bottomLine.startPoint, topLine.startPoint);
-        rightLine = new Line(bottomLine.endPoint, topLine.endPoint);
+        updateLeftAndRight();
     }
 
 
@@ -26,6 +25,7 @@ public class Rectangle {
             bottomLine.shiftLine(d);
         }
 
+        updateLeftAndRight();
     }
 
 
@@ -41,6 +41,8 @@ public class Rectangle {
             bottomLine.startPoint = bottomLine.startPoint.findExtendedPoint(-d, m);
             bottomLine.endPoint = bottomLine.endPoint.findExtendedPoint(-d, m);
         }
+
+        updateLeftAndRight();
     }
 
 

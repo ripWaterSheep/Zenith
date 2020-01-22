@@ -1,18 +1,21 @@
 package game.activity;
 
 
+import game.components.Menu;
 import game.components.handlers.Level;
 import game.components.Structure;
 import game.components.handlers.World;
+import util.geometry.Line;
+import util.geometry.Rectangle;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Layout {
 
-//
-//    Menu ourMenu = new Menu("Main Menu", new ArrayList<>() {{
-//        add(new Rectangle(new Line(new Point())))
+
+//    Menu ourMenu = new Menu("Menu test", new ArrayList<>() {{
+//        add(new Rectangle())
 //    }});
 
 
