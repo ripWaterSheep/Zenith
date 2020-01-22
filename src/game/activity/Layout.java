@@ -26,24 +26,12 @@ public class Layout {
 
 
     Level firstLevel = new Level("Level 1",
-            new Structure("Level 1 Menu Image", new ImageIcon("./res/images/")))
-
-
-    Level testLevel = new Level("Test Level", null, new ArrayList<>() {{
-            add(new World("Test World", null, null, null, new ArrayList<>() {{
-                add(new ArrayList<>() {{
-                    add(new Structure("Test", null, Color.BLACK, true, 400, 400, 200, 200));
-                    add(new Structure("Second test", null, Color.YELLOW, false, 200, 200, 50, 50));
-                }});
-            }}));
-
-            add(new World("Second test world", null, null, null, new ArrayList<>() {{
-                add(new ArrayList<>() {{
-                    add(new Structure("jk flushed face", null, Color.GREEN, true, 0, 0 , 400, 400));
-                }});
-            }}));
-        }
-    });
+            new Structure("Level 1 Menu Image", new ImageIcon("./res/images/Lvl1.png"), null, false, 100, 100, 0, 0),
+            new ArrayList<>() {{
+                add(new World("First World", null, null, new Point(1920, 1080), new ArrayList<>() {{
+                    new Structure("Level 1 Structure", null, Color.BLACK, true, 400, 400, 200, 200);
+                }}));
+            }});
 
 
 }

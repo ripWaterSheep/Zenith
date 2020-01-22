@@ -46,11 +46,28 @@ public class Activity {
     private void checkForLevelClicks() {
         int levelClickCounter = 0;
         for (Level l : getLevels()) {
-            if (clickedInRect(leftClickPoint, l.getMenuStructure().getRect())) {
+            if (l.getMenuStructure().getRect().contains(leftClickPoint)) {
                 setLevel(levelClickCounter);
                 ourStates = states.GAME;
+
+                System.out.println(l.getName() + "clicked on");
             }
+
             levelClickCounter++;
+        }
+    }
+
+
+    private void debugTelemetry() {
+        try {
+            System.out.println();
+            System.out.println("Status: " + ourStates);
+            System.out.println("Menu states: " + menu.getOurRequestedScreen());
+            System.out.println("Current level: " + getLevels().get(currLevelIndex).getName());
+            System.out.println("Current world: " + getLevels().get(currLevelIndex).getCurrWorld().getName());
+
+        } catch (Exception e) {
+            System.out.println("something went wrong");
         }
     }
 
@@ -75,12 +92,21 @@ public class Activity {
 
 
     public void run() {
+        debugTelemetry();
+
+        if (leftClickPoint != null) {
+            System.out.println(leftClickPoint);
+        }
+
         switch (ourStates) {
 
             case MENU:
                 menu.run();
 
                 switch (menu.getOurRequestedScreen()) {
+                    case MAIN_MENU:
+                        return;
+
                     case SHOP:
                         ourStates = states.SHOP;
                         break;
@@ -93,8 +119,6 @@ public class Activity {
                         ourStates = states.LEVEL_SELECT;
                         break;
 
-                    default:
-                        break;
                 }
 
 
@@ -108,6 +132,10 @@ public class Activity {
                 }
 
                 break;
+
+
+            case GAME:
+                getLevels().get(currLevelIndex).runLevel();
 
         }
     }

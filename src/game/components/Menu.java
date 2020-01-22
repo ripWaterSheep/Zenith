@@ -29,9 +29,10 @@ public class Menu {
     }
 
 
-    private requestedScreen ourRequestedScreen;
+    private requestedScreen ourRequestedScreen = requestedScreen.MAIN_MENU;
 
     public enum requestedScreen {
+        MAIN_MENU,
         LEVEL_SELECT,
         SHOP,
         SETTINGS,

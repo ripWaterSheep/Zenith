@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+import util.geometry.Point;
 
 /**
  * World is basically a glorified ArrayList of Structures
@@ -29,6 +30,10 @@ public class World {
 
 
     private String name;
+
+    public String getName() {
+        return name;
+    }
 
     private ImageIcon backgroundImage;
 

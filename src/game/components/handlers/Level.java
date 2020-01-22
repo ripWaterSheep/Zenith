@@ -49,6 +49,11 @@ public class Level {
 
     private String name;
 
+    public String getName() {
+        return name;
+    }
+
+
 
     private ArrayList<World> worlds;
     public ArrayList<World> getWorlds() { return worlds; }

@@ -12,15 +12,16 @@ public class MainPanel extends JPanel {
 
     private Activity activity = new Activity();
 
-    MainPanel() {
+    public MainPanel() {
         activity.init(this);
+
     }
 
 
     @Override
     public void paintComponent(Graphics g) {
         g.setColor(Color.WHITE);
-        g.fillRect(0,0,800,800);
+        g.fillRect(0, 0, 1920, 1080);
 
         Component.createGraphics(g);
 

@@ -45,7 +45,11 @@ public class UtilMethods {
      * @return whether or not it was clicked inside that rectangle
      */
     public static boolean clickedInRect(Point point, double left, double top, double right, double bottom) {
-        return point.x > left && point.x < right && point.y < bottom && point.y > top;
+        if (point != null) {
+            return point.x > left && point.x < right && point.y < bottom && point.y > top;
+        }
+
+        return false;
     }
 
     /**

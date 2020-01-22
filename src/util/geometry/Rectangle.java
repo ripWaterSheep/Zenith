@@ -46,6 +46,17 @@ public class Rectangle {
     }
 
 
+    /**
+     * assuming normal rect
+     *
+     * @param p
+     * @return
+     */
+    public boolean contains(Point p) {
+        return p.x > leftLine.startPoint.x && p.x < rightLine.endPoint.x && p.y > topLine.startPoint.y && p.y < bottomLine.endPoint.y;
+    }
+
+
     protected int[] xPoints() {
         return new int[]{
                 (int) topLine.startPoint.x,

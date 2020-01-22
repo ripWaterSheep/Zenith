@@ -1,5 +1,7 @@
 package game.controls;
 
+import util.geometry.Point;
+
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -10,7 +12,7 @@ import static game.controls.InputVars.*;
 
 
 public class Input {
-    public static KeyAdapter keyAdapter = new KeyAdapter() {
+    private static KeyAdapter keyAdapter = new KeyAdapter() {
         @Override
         public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) {
@@ -183,11 +185,16 @@ public class Input {
     };
 
 
-    public static MouseAdapter mouseAdapter = new MouseAdapter() {
+    private static MouseAdapter mouseAdapter = new MouseAdapter() {
         @Override
         public void mousePressed(MouseEvent e) {
             switch (e.getButton()) {
                 case MouseEvent.BUTTON1:
+                    leftClickPoint = new Point(e.getX(), e.getY());
+                    break;
+
+                case MouseEvent.BUTTON3:
+                    rightClickPoint = new Point(e.getX(), e.getY());
 
             }
         }
