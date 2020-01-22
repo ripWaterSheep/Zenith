@@ -7,10 +7,10 @@ public class Rectangle {
     public Line leftLine;
     public Line rightLine;
 
-    public Rectangle(Line topLine, double width) {
+    public Rectangle(Line topLine, double height) {
         this.topLine = topLine;
 
-        bottomLine = topLine.getParallelLine(width);
+        bottomLine = topLine.getParallelLine(height);
 
         updateLeftAndRight();
     }
