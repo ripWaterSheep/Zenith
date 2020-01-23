@@ -1,6 +1,6 @@
 package testers;
 
-import settings.Settings;
+import game.settings.Settings;
 
 import java.io.IOException;
 import java.util.Arrays;

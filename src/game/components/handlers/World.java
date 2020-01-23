@@ -24,7 +24,6 @@ public class World {
         this.borderColor = borderColor;
         this.widthHeight = widthHeight;
         currWorldComponents = allComponents;
-
     }
 
 

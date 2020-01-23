@@ -1,6 +1,8 @@
 package game.activity;
 
 
+import game.components.Component;
+import game.components.Structure;
 import game.components.handlers.Level;
 import game.controls.Input;
 import util.Clock;
@@ -8,12 +10,14 @@ import util.Clock;
 import javax.swing.*;
 
 
+import java.util.ArrayList;
+
 import static game.components.handlers.Level.*;
 import static game.components.Menu.*;
 import static game.controls.InputVars.*;
 import static util.UtilMethods.*;
 
-public class Activity {
+public class MainActivity {
 
     private Layout layout = new Layout();
 
@@ -43,6 +47,11 @@ public class Activity {
     public int getCurrLevelIndex() { return currLevelIndex; }
 
 
+    private Level currentLevel() {
+        return getLevels().get(currLevelIndex);
+    }
+
+
     private void checkForLevelClicks() {
         int levelClickCounter = 0;
         for (Level l : getLevels()) {
@@ -64,13 +73,12 @@ public class Activity {
             System.out.println("Menu states: " + menu.getOurRequestedScreen());
             System.out.println("Current level: " + getLevels().get(currLevelIndex).getName());
             System.out.println("Current world: " + getLevels().get(currLevelIndex).getCurrWorld().getName());
+            System.out.println("Current world structure arr length: " + currentLevel().getCurrWorld().currWorldComponents.size());
             System.out.println();
 
-            System.out.println("Click coords" + leftClickPoint);
-            System.out.println("Level 1 rectangle" + getLevels().get(0).getMenuStructure().getRect());
-
         } catch (Exception e) {
-            System.out.println("something went wrong");
+            System.out.println("something went wrong:");
+            e.printStackTrace();
         }
     }
 

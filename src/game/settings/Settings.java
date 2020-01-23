@@ -1,4 +1,4 @@
-package settings;
+package game.settings;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,8 +25,8 @@ public class Settings {
     };
 
 
-    private static String settingsPath = ".\\src\\settings\\settings.txt";
-    private static String defaultSettingsPath = ".\\src\\settings\\defaultSettings.txt";
+    private static String settingsPath = ".\\src\\game\\settings\\game.settings.txt";
+    private static String defaultSettingsPath = ".\\src\\game\\settings\\defaultSettings.txt";
 
     public static void generateSettings(double forward, double left, double backwards, double right, double mouseTurn, double mouseShoot) throws IOException {
         String str = forward + "\n"

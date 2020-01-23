@@ -1,6 +1,6 @@
 package testers;
 
-import game.activity.Activity;
+import game.activity.MainActivity;
 import game.components.Component;
 import util.UtilMethods;
 
@@ -16,7 +16,7 @@ public class MainTester {
 
 class MainTesterPanel extends JPanel {
 
-    private Activity mainActivity = new Activity();
+    private MainActivity mainActivity = new MainActivity();
 
     MainTesterPanel() {
         mainActivity.init(this);

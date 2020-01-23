@@ -1,6 +1,6 @@
 package main;
 
-import game.activity.Activity;
+import game.activity.MainActivity;
 import game.components.Component;
 import util.UtilMethods;
 
@@ -10,10 +10,10 @@ import java.awt.*;
 public class MainPanel extends JPanel {
 
 
-    private Activity activity = new Activity();
+    private MainActivity mainActivity = new MainActivity();
 
     public MainPanel() {
-        activity.init(this);
+        mainActivity.init(this);
 
     }
 
@@ -25,7 +25,7 @@ public class MainPanel extends JPanel {
 
         Component.createGraphics(g);
 
-        activity.run();
+        mainActivity.run();
 
         UtilMethods.sleep(10);
         repaint();
