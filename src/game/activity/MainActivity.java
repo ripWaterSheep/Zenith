@@ -65,20 +65,23 @@ public class MainActivity {
     }
 
 
+    private Clock telemetryClock = new Clock(1000);
     private void debugTelemetry() {
-        try {
-            System.out.println("-------------------------------------");
-            System.out.println();
-            System.out.println("Status: " + ourStates);
-            System.out.println("Menu states: " + menu.getOurRequestedScreen());
-            System.out.println("Current level: " + getLevels().get(currLevelIndex).getName());
-            System.out.println("Current world: " + getLevels().get(currLevelIndex).getCurrWorld().getName());
-            System.out.println("Current world structure arr length: " + currentLevel().getCurrWorld().currWorldComponents.size());
-            System.out.println();
+        if(telemetryClock.isLapDone()) {
+            try {
+                System.out.println();
+                System.out.println();
+                System.out.println("Status: " + ourStates);
+                System.out.println("Menu states: " + menu.getOurRequestedScreen());
+                System.out.println("Current level: " + getLevels().get(currLevelIndex).getName());
+                System.out.println("Current world: " + getLevels().get(currLevelIndex).getCurrWorld().getName());
+                System.out.println("Current world structure arr length: " + currentLevel().getCurrWorld().currWorldComponents.size());
+                System.out.println();
 
-        } catch (Exception e) {
-            System.out.println("something went wrong:");
-            e.printStackTrace();
+            } catch (Exception e) { 
+                System.out.println("something went wrong: \n");
+                e.printStackTrace();
+            }
         }
     }
 
@@ -94,20 +97,15 @@ public class MainActivity {
             l.initLevel();
         }
 
-        clock.startClock();
     }
 
 
 
-    Clock clock = new Clock(5000);
-
 
     public void run() {
         debugTelemetry();
+        Clock.runInstances();
 
-        if (leftClickPoint != null) {
-            System.out.println(leftClickPoint);
-        }
 
         switch (ourStates) {
 

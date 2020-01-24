@@ -1,7 +1,5 @@
 package game.activity;
 
-
-import game.components.Component;
 import game.components.Menu;
 import game.components.handlers.Level;
 import game.components.Structure;
@@ -32,6 +30,18 @@ public class Layout {
                 add(new World("sadface", null, null, new Point(1920, 1080), new ArrayList<>() {{
                     add(new ArrayList<>() {{
                         add(new Structure("evensadder face", null, Color.BLUE, false, 0, 0, 1920, 1080));
+                        add(new Structure("red circle", null, Color.RED, true, 350, 350, 200, 200));
+                    }});
+                }}));
+            }});
+
+    
+    Level secondLevel = new Level("Level 2",
+            new Structure("Level 2 structure", new ImageIcon("./res/images/Lvl2.png"), null, false, 400, 100, 268, 177),
+            new ArrayList<>() {{
+                add(new World("second world", null, null, new Point(1920, 1080), new ArrayList<>() {{
+                    add(new ArrayList<>() {{
+                        add(new Structure("bigboi", null, Color.GREEN, true, 0,0, 800, 800));
                     }});
                 }}));
             }});
