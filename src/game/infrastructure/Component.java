@@ -1,4 +1,4 @@
-package game.components;
+package game.infrastructure;
 
 import javax.swing.*;
 import java.awt.*;

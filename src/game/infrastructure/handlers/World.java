@@ -1,6 +1,6 @@
-package game.components.handlers;
+package game.infrastructure.handlers;
 
-import game.components.Component;
+import game.infrastructure.Component;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ import util.geometry.Point;
 public class World {
 
 
-    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends game.components.Component>> allComponents) {
+    public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends game.infrastructure.Component>> allComponents) {
         this.name = name;
         this.backgroundImage = backgroundImage;
         this.borderColor = borderColor;
@@ -44,14 +44,14 @@ public class World {
      */
     private Point widthHeight;
 
-    public ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
+    public ArrayList<ArrayList<? extends game.infrastructure.Component>> currWorldComponents;
 
 
 
 
     public void initWorld() {
-        for(ArrayList<? extends game.components.Component> cList : currWorldComponents) {
-            for(game.components.Component c : cList) {
+        for (ArrayList<? extends game.infrastructure.Component> cList : currWorldComponents) {
+            for (game.infrastructure.Component c : cList) {
                 c.init();
             }
         }
@@ -59,7 +59,7 @@ public class World {
 
 
     public void updateWorld() {
-        for(ArrayList<? extends game.components.Component> cList : currWorldComponents) {
+        for (ArrayList<? extends game.infrastructure.Component> cList : currWorldComponents) {
             for(Component c : cList) {
                 c.update();
                 c.draw();

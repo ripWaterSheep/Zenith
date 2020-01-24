@@ -1,4 +1,4 @@
-package game.components;
+package game.infrastructure;
 
 import util.geometry.Line;
 import util.geometry.Point;

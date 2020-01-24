@@ -1,11 +1,11 @@
-package game.components;
+package game.infrastructure;
 
 import util.geometry.Rectangle;
 
 import javax.swing.*;
 import java.util.ArrayList;
 
-import static game.components.Component.g;
+import static game.infrastructure.Component.g;
 import static util.UtilMethods.*;
 import static game.controls.InputVars.*;
 

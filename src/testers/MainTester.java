@@ -1,7 +1,7 @@
 package testers;
 
 import game.activity.MainActivity;
-import game.components.Component;
+import game.infrastructure.Component;
 import util.UtilMethods;
 
 import javax.swing.*;

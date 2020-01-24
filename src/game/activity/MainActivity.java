@@ -1,21 +1,16 @@
 package game.activity;
 
 
-import game.components.Component;
-import game.components.Structure;
-import game.components.handlers.Level;
+import game.infrastructure.handlers.Level;
 import game.controls.Input;
 import util.Clock;
 
 import javax.swing.*;
 
 
-import java.util.ArrayList;
-
-import static game.components.handlers.Level.*;
-import static game.components.Menu.*;
+import static game.infrastructure.handlers.Level.*;
+import static game.infrastructure.Menu.*;
 import static game.controls.InputVars.*;
-import static util.UtilMethods.*;
 
 public class MainActivity {
 
@@ -78,7 +73,7 @@ public class MainActivity {
                 System.out.println("Current world structure arr length: " + currentLevel().getCurrWorld().currWorldComponents.size());
                 System.out.println();
 
-            } catch (Exception e) { 
+            } catch (Exception e) {
                 System.out.println("something went wrong: \n");
                 e.printStackTrace();
             }

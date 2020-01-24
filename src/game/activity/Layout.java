@@ -1,9 +1,9 @@
 package game.activity;
 
-import game.components.Menu;
-import game.components.handlers.Level;
-import game.components.Structure;
-import game.components.handlers.World;
+import game.infrastructure.Menu;
+import game.infrastructure.handlers.Level;
+import game.infrastructure.Structure;
+import game.infrastructure.handlers.World;
 import util.geometry.Line;
 import util.geometry.Point;
 import util.geometry.Rectangle;
@@ -35,7 +35,7 @@ public class Layout {
                 }}));
             }});
 
-    
+
     Level secondLevel = new Level("Level 2",
             new Structure("Level 2 structure", new ImageIcon("./res/images/Lvl2.png"), null, false, 400, 100, 268, 177),
             new ArrayList<>() {{
