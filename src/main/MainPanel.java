@@ -1,7 +1,7 @@
 package main;
 
 import game.activity.MainActivity;
-import game.infrastructure.Component;
+import game.components.Component;
 import util.UtilMethods;
 
 import javax.swing.*;

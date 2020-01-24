@@ -1,9 +1,9 @@
 package game.activity;
 
-import game.infrastructure.Menu;
-import game.infrastructure.handlers.Level;
-import game.infrastructure.Structure;
-import game.infrastructure.handlers.World;
+import game.components.Menu;
+import game.components.handlers.Level;
+import game.components.Structure;
+import game.components.handlers.World;
 import util.geometry.Line;
 import util.geometry.Point;
 import util.geometry.Rectangle;

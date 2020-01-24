@@ -1,4 +1,6 @@
-package game.infrastructure;
+package game.components;
+
+import util.BetterImageIcon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +23,10 @@ public abstract class Component {
 
     this is why my code is more alpha than josh's
     flexed on
+
+    this is satire if you still haven't got it
      */
-    protected Component(String name, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
+    protected Component(String name, BetterImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
         this.name = name;
         this.image = image;
         this.color = color;
@@ -34,10 +38,15 @@ public abstract class Component {
     }
 
 
+    protected Component() {
+        // ok neil
+    }
+
+
     protected String name;
 
 
-    protected ImageIcon image;
+    protected BetterImageIcon image;
 
     protected Color color;
 

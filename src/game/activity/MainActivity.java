@@ -1,15 +1,15 @@
 package game.activity;
 
 
-import game.infrastructure.handlers.Level;
+import game.components.handlers.Level;
 import game.controls.Input;
 import util.Clock;
 
 import javax.swing.*;
 
 
-import static game.infrastructure.handlers.Level.*;
-import static game.infrastructure.Menu.*;
+import static game.components.handlers.Level.*;
+import static game.components.Menu.*;
 import static game.controls.InputVars.*;
 
 public class MainActivity {

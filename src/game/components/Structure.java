@@ -1,5 +1,6 @@
-package game.infrastructure;
+package game.components;
 
+import util.BetterImageIcon;
 import util.geometry.Line;
 import util.geometry.Point;
 import util.geometry.Rectangle;
@@ -11,7 +12,7 @@ import java.awt.*;
 public class Structure extends Component {
 
 
-    public Structure(String name, ImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
+    public Structure(String name, BetterImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
         super(name, image, color, isCircle, x, y, width, height);
     }
 

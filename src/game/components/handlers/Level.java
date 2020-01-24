@@ -1,6 +1,6 @@
-package game.infrastructure.handlers;
+package game.components.handlers;
 
-import game.infrastructure.Structure;
+import game.components.Structure;
 
 import java.util.ArrayList;
 
