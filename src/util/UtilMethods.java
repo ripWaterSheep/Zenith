@@ -2,6 +2,7 @@ package util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 
 import util.geometry.Rectangle;
 import util.geometry.Point;
@@ -63,4 +64,11 @@ public class UtilMethods {
     }
 
 
+
+    public static AffineTransform rotateAt(double angle, double anchorX, double anchorY) {
+        AffineTransform at = new AffineTransform();
+        at.setToRotation(angle, anchorX, anchorY);
+
+        return at;
+    }
 }

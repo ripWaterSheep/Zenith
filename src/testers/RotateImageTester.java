@@ -6,8 +6,6 @@ import util.UtilMethods;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
 
 public class RotateImageTester {
     public static void main(String[] args) {
@@ -19,23 +17,19 @@ class RotateImageTesterPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-//        BetterImageIcon image = new BetterImageIcon("BattleCruiser");
-////        BufferedImage bImage = new BufferedImage("./res/images/Batt")
-//
-//
-//        int drawLocationX = 300;
-//        int drawLocationY = 300;
-//
-//// Rotation information
-//
-//        double rotationRequired = Math.toRadians (45);
-//        double locationX = 12.5;
-//        double locationY = 25;
-//
-//        AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
-//        AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
-//
-//// Drawing the rotated image at the required drawing locations
-//        g.drawImage(op.filter(bImage, null), drawLocationX, drawLocationY, null);
+        BetterImageIcon image = new BetterImageIcon("spaceship");
+        int xPos = 400;
+        int yPos = 400;
+        double width = 25;
+        double height = 25;
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawImage(image.getImage(), xPos, yPos, null);
+
+        AffineTransform at = new AffineTransform();
+        at.setToRotation(Math.toRadians(45), xPos + width/2 , yPos + height/2);
+        g2d.setTransform(at);
+
+        g2d.drawImage(image.getImage(), xPos, yPos, null);
     }
 }
