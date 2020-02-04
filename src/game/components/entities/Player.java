@@ -5,6 +5,9 @@ import util.BetterImageIcon;
 import util.Window;
 
 import javax.swing.*;
+import java.awt.geom.AffineTransform;
+
+import static game.controls.InputVars.*;
 
 public class Player extends Component {
 
@@ -33,6 +36,11 @@ public class Player extends Component {
 
     private double orientationRad;
 
+    private double heading; // rad
+
+
+
+
 
     @Override
     public void init() {
@@ -46,6 +54,7 @@ public class Player extends Component {
 
     @Override
     public void draw() {
-
+        AffineTransform at = new AffineTransform();
+        at.setToRotation(heading);
     }
 }

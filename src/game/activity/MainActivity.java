@@ -82,7 +82,13 @@ public class MainActivity {
 
 
 
+    public static Clock gameClock = new Clock(0);
+
+
+
     public void init(JPanel panel) {
+        Clock.runInstances();
+
         setLevel(0);
         Input.init(panel); // listeners
 
