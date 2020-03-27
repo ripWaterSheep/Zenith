@@ -1,12 +1,12 @@
-package game.components.handlers;
+package game.components.handlers;
 
-import game.components.Component;
+import game.components.Component;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
-import util.geometry.Point;
+import util.geometry.Point;
 
 /**
  * World is basically a glorified ArrayList of Structures
@@ -19,32 +19,32 @@ public class World {
 
 
     public World(String name, ImageIcon backgroundImage, Color borderColor, Point widthHeight, ArrayList<ArrayList<? extends game.components.Component>> allComponents) {
-        this.name = name;
-        this.backgroundImage = backgroundImage;
-        this.borderColor = borderColor;
-        this.widthHeight = widthHeight;
-        currWorldComponents = allComponents;
+        this.name = name;
+        this.backgroundImage = backgroundImage;
+        this.borderColor = borderColor;
+        this.widthHeight = widthHeight;
+        currWorldComponents = allComponents;
     }
 
 
 
-    private String name;
+    private String name;
 
     public String getName() {
-        return name;
+        return name;
     }
 
-    private ImageIcon backgroundImage;
+    private ImageIcon backgroundImage;
 
-    private Color borderColor;
+    private Color borderColor;
 
     /**
      * x = width
      * y = height
      */
-    private Point widthHeight;
+    private Point widthHeight;
 
-    public ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
+    public ArrayList<ArrayList<? extends game.components.Component>> currWorldComponents;
 
 
 
@@ -52,7 +52,7 @@ public class World {
     public void initWorld() {
         for (ArrayList<? extends game.components.Component> cList : currWorldComponents) {
             for (game.components.Component c : cList) {
-                c.init();
+                c.init();
             }
         }
     }
@@ -61,8 +61,8 @@ public class World {
     public void updateWorld() {
         for (ArrayList<? extends game.components.Component> cList : currWorldComponents) {
             for(Component c : cList) {
-                c.update();
-                c.draw();
+                c.update();
+                c.draw();
             }
         }
     }

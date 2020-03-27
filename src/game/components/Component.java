@@ -1,18 +1,18 @@
-package game.components;
+package game.components;
 
-import util.BetterImageIcon;
+import util.BetterImageIcon;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.*;
+import java.awt.*;
 
 public abstract class Component {
 
 
     // graphics instance used by all components
-    public static Graphics g;
+    public static Graphics g;
 
     public static void createGraphics(Graphics g) {
-        Component.g = g;
+        Component.g = g;
     }
 
     /*
@@ -27,14 +27,14 @@ public abstract class Component {
     this is satire if you still haven't got it
      */
     protected Component(String name, BetterImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
-        this.name = name;
-        this.image = image;
-        this.color = color;
-        this.isCircle = isCircle;
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+        this.name = name;
+        this.image = image;
+        this.color = color;
+        this.isCircle = isCircle;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
 
 
@@ -43,25 +43,25 @@ public abstract class Component {
     }
 
 
-    protected String name;
+    protected String name;
 
 
-    protected BetterImageIcon image;
+    protected BetterImageIcon image;
 
-    protected Color color;
+    protected Color color;
 
-    protected boolean isCircle;
+    protected boolean isCircle;
 
 
     // world location
-    protected double x;
-    protected double y;
+    protected double x;
+    protected double y;
 
-    protected double displayX;
-    protected double displayY;
+    protected double displayX;
+    protected double displayY;
 
-    protected double width;
-    protected double height;
+    protected double width;
+    protected double height;
 
 
     /**
@@ -70,9 +70,9 @@ public abstract class Component {
 
 
 
-    public abstract void init();
+    public abstract void init();
 
-    public abstract void update(); // updating component fields
+    public abstract void update(); // updating component fields
 
-    public abstract void draw();
+    public abstract void draw();
 }

@@ -1,68 +1,68 @@
-package util;
+package util;
 
-import java.util.ArrayList;
+import java.util.ArrayList;
 
-import static java.lang.System.currentTimeMillis;
+import static java.lang.System.currentTimeMillis;
 
 public class Clock {
-    public static ArrayList<Clock> instances = new ArrayList<>();
+    public static ArrayList<Clock> instances = new ArrayList<>();
 
-    private long startTime = currentTimeMillis();
-    private long currTime = startTime;
-    private long lapPeriod;
-    private long lapStart;
+    private long startTime = currentTimeMillis();
+    private long currTime = startTime;
+    private long lapPeriod;
+    private long lapStart;
 
-    private int amtLapsDone;
+    private int amtLapsDone;
 
-    private boolean lapDone;
-    private boolean paused = false;
+    private boolean lapDone;
+    private boolean paused = false;
 
     public Clock(long lapPeriod) {
-        instances.add(this);
+        instances.add(this);
 
-        this.lapPeriod = lapPeriod;
+        this.lapPeriod = lapPeriod;
     }
 
 
     public boolean isLapDone() {
-        return lapDone;
+        return lapDone;
     }
 
     public long getCurrTime() {
-        return currTime;
+        return currTime;
     }
 
     public long getLapStart() {
-        return lapStart;
+        return lapStart;
     }
 
     public int getAmtLapsDone() {
-        return amtLapsDone;
+        return amtLapsDone;
     }
 
-    public boolean oneLapDone() { return getAmtLapsDone() > 0; }
+    public boolean oneLapDone() { return getAmtLapsDone() > 0; }
 
     public void startClock() {
-        paused = false;
+        paused = false;
     }
 
     public void pauseClock() {
-        paused = true;
+        paused = true;
     }
 
 
     private void run() {
         if (paused) {
-            return;
+            return;
         }
-        lapDone = false;
+        lapDone = false;
 
-        currTime = currentTimeMillis() - startTime;
+        currTime = currentTimeMillis() - startTime;
 
         if (currTime - lapStart >= lapPeriod) {
-            lapStart = currTime;
-            amtLapsDone++;
-            lapDone = true;
+            lapStart = currTime;
+            amtLapsDone++;
+            lapDone = true;
         }
 
     }
@@ -70,6 +70,6 @@ public class Clock {
 
     public static void runInstances() {
         for (Clock c : instances)
-            c.run();
+            c.run();
     }
 }

@@ -1,21 +1,21 @@
-package util.geometry;
+package util.geometry;
 
 public class Point {
-    public double x, y;
+    public double x, y;
 
     public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
+        this.x = x;
+        this.y = y;
     }
 
     public Point() {
-        x = 0;
-        y = 0;
+        x = 0;
+        y = 0;
     }
 
     void offsetPoint(double dx, double dy) {
-        x += dx;
-        y += dy;
+        x += dx;
+        y += dy;
     }
 
 
@@ -26,18 +26,18 @@ public class Point {
      */
     Point findExtendedPoint(double d, double m) {
         if (m != 0) {
-            double newX = x + (d / Math.sqrt(1 + m * m));
-            double newY = m * (newX - x) + y;
+            double newX = x + (d / Math.sqrt(1 + m * m));
+            double newY = m * (newX - x) + y;
 
-            return new Point(newX, newY);
+            return new Point(newX, newY);
         } else {
-            return new Point(x, y + d);
+            return new Point(x, y + d);
         }
     }
 
 
     @Override
     public String toString() {
-        return " (" + x + "," + y + ")";
+        return " (" + x + "," + y + ")";
     }
 }

@@ -1,8 +1,8 @@
-package game.components.handlers;
+package game.components.handlers;
 
-import game.components.Structure;
+import game.components.Structure;
 
-import java.util.ArrayList;
+import java.util.ArrayList;
 
 
 /**
@@ -18,8 +18,8 @@ import java.util.ArrayList;
  */
 public class Level {
 
-    private static ArrayList<Level> levels = new ArrayList<>();
-    public static ArrayList<Level> getLevels() { return levels; }
+    private static ArrayList<Level> levels = new ArrayList<>();
+    public static ArrayList<Level> getLevels() { return levels; }
 
 
 
@@ -32,52 +32,52 @@ public class Level {
      * @param worlds ArrayList of worlds in this level
      */
     public Level(String name, Structure menuStructure, ArrayList<World> worlds) {
-        this.name = name;
-        this.menuStructure = menuStructure;
-        this.worlds = worlds;
+        this.name = name;
+        this.menuStructure = menuStructure;
+        this.worlds = worlds;
 
-        levels.add(this);
+        levels.add(this);
     }
 
-    private Structure menuStructure;
+    private Structure menuStructure;
 
     public Structure getMenuStructure() {
-        return menuStructure;
+        return menuStructure;
     }
 
 
 
-    private String name;
+    private String name;
 
     public String getName() {
-        return name;
+        return name;
     }
 
 
 
-    private ArrayList<World> worlds;
-    public ArrayList<World> getWorlds() { return worlds; }
+    private ArrayList<World> worlds;
+    public ArrayList<World> getWorlds() { return worlds; }
 
 
-    private int worldIndex;
+    private int worldIndex;
 
-    public void setWorld(int index) { this.worldIndex = index; }
-    public void nextWorld() { worldIndex++; }
-    public World getCurrWorld() { return  getWorlds().get(worldIndex); }
+    public void setWorld(int index) { this.worldIndex = index; }
+    public void nextWorld() { worldIndex++; }
+    public World getCurrWorld() { return  getWorlds().get(worldIndex); }
 
 
 
 
 
     public void initLevel() {
-        getCurrWorld().initWorld();
+        getCurrWorld().initWorld();
     }
 
     public void runLevel() {
-        getCurrWorld().updateWorld();
+        getCurrWorld().updateWorld();
     }
 
     public void runMenuComponent() {
-        menuStructure.draw();
+        menuStructure.draw();
     }
 }

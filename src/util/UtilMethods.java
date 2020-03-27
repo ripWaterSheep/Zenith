@@ -1,11 +1,11 @@
-package util;
+package util;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.geom.AffineTransform;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.AffineTransform;
 
-import util.geometry.Rectangle;
-import util.geometry.Point;
+import util.geometry.Rectangle;
+import util.geometry.Point;
 
 public class UtilMethods {
 
@@ -14,13 +14,13 @@ public class UtilMethods {
      * @param container Panel that the frame will run
      */
     public static void runFrame(Container container) {
-        JFrame frame = new JFrame("Zenith");
-        frame.setSize(1366, 768);
-        frame.setLocation(0, 0);
-        frame.setResizable(false);
-        frame.setContentPane(container);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        JFrame frame = new JFrame("Zenith");
+        frame.setSize(1366, 768);
+        frame.setLocation(0, 0);
+        frame.setResizable(false);
+        frame.setContentPane(container);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 
 
@@ -30,7 +30,7 @@ public class UtilMethods {
      */
     public static void sleep(long ms) {
         try {
-            Thread.sleep(ms);
+            Thread.sleep(ms);
         } catch (Exception ignored) {
         }
     }
@@ -47,10 +47,10 @@ public class UtilMethods {
      */
     public static boolean clickedInRect(Point point, double left, double top, double right, double bottom) {
         if (point != null) {
-            return point.x > left && point.x < right && point.y < bottom && point.y > top;
+            return point.x > left && point.x < right && point.y < bottom && point.y > top;
         }
 
-        return false;
+        return false;
     }
 
     /**
@@ -60,15 +60,15 @@ public class UtilMethods {
      * @return
      */
     public static boolean clickedInRect(Point point, Rectangle r) {
-        return clickedInRect(point, r.leftLine.startPoint.x, r.topLine.startPoint.y, r.rightLine.startPoint.x, r.bottomLine.startPoint.y);
+        return clickedInRect(point, r.leftLine.startPoint.x, r.topLine.startPoint.y, r.rightLine.startPoint.x, r.bottomLine.startPoint.y);
     }
 
 
 
     public static AffineTransform rotateAt(double angle, double anchorX, double anchorY) {
-        AffineTransform at = new AffineTransform();
-        at.setToRotation(angle, anchorX, anchorY);
+        AffineTransform at = new AffineTransform();
+        at.setToRotation(angle, anchorX, anchorY);
 
-        return at;
+        return at;
     }
 }

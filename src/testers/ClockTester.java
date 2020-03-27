@@ -1,13 +1,13 @@
-package testers;
+package testers;
 
-import util.Clock;
+import util.Clock;
 
 public class ClockTester {
     public static void main(String[] args) {
-        Clock clock = new Clock(500);
+        Clock clock = new Clock(500);
         while(true) {
-            Clock.runInstances();
-            System.out.println(clock.isLapDone());
+            Clock.runInstances();
+            System.out.println(clock.isLapDone());
         }
     }
 }

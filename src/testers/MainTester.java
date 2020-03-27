@@ -1,34 +1,34 @@
-package testers;
+package testers;
 
-import game.activity.MainActivity;
-import game.components.Component;
-import util.UtilMethods;
+import game.activity.MainActivity;
+import game.components.Component;
+import util.UtilMethods;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class MainTester {
     public static void main(String[] args) {
-        UtilMethods.runFrame(new MainTesterPanel());
+        UtilMethods.runFrame(new MainTesterPanel());
     }
 }
 
 
 class MainTesterPanel extends JPanel {
 
-    private MainActivity mainActivity = new MainActivity();
+    private MainActivity mainActivity = new MainActivity();
 
     MainTesterPanel() {
-        mainActivity.init(this);
+        mainActivity.init(this);
     }
 
 
     @Override
     public void paintComponent(Graphics g) {
-        Component.createGraphics(g);
-        mainActivity.run();
+        Component.createGraphics(g);
+        mainActivity.run();
 
-        UtilMethods.sleep(10);
-        repaint();
+        UtilMethods.sleep(10);
+        repaint();
     }
 }

@@ -1,26 +1,26 @@
-package game.activity;
+package game.activity;
 
-import game.components.Menu;
-import game.components.handlers.Level;
-import game.components.Structure;
-import game.components.handlers.World;
-import util.geometry.Line;
-import util.geometry.Point;
-import util.geometry.Rectangle;
+import game.components.Menu;
+import game.components.handlers.Level;
+import game.components.Structure;
+import game.components.handlers.World;
+import util.geometry.Line;
+import util.geometry.Point;
+import util.geometry.Rectangle;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class Layout {
 
 
     Menu ourMenu = new Menu("Menu test", new ArrayList<>() {{
-        int height = 520 - 360;
-        add(new Rectangle(new Line(new Point(640, 360), new Point(1260, 360)), height));
-        add(new Rectangle(new Line(new Point(640, 580), new Point(1260, 580)), height));
-        add(new Rectangle(new Line(new Point(640, 820), new Point(1260, 820)), height));
-    }});
+        int height = 520 - 360;
+        add(new Rectangle(new Line(new Point(640, 360), new Point(1260, 360)), height));
+        add(new Rectangle(new Line(new Point(640, 580), new Point(1260, 580)), height));
+        add(new Rectangle(new Line(new Point(640, 820), new Point(1260, 820)), height));
+    }});
 
 
 //
@@ -29,11 +29,11 @@ public class Layout {
 //            new ArrayList<>() {{
 //                add(new World("sadface", null, null, new Point(1920, 1080), new ArrayList<>() {{
 //                    add(new ArrayList<>() {{
-//                        add(new Structure("evensadder face", null, Color.BLUE, false, 0, 0, 1920, 1080));
-//                        add(new Structure("red circle", null, Color.RED, true, 350, 350, 200, 200));
-//                    }});
-//                }}));
-//            }});
+//                        add(new Structure("evensadder face", null, Color.BLUE, false, 0, 0, 1920, 1080));
+//                        add(new Structure("red circle", null, Color.RED, true, 350, 350, 200, 200));
+//                    }});
+//                }}));
+//            }});
 //
 //
 //    Level secondLevel = new Level("Level 2",
@@ -41,10 +41,10 @@ public class Layout {
 //            new ArrayList<>() {{
 //                add(new World("second world", null, null, new Point(1920, 1080), new ArrayList<>() {{
 //                    add(new ArrayList<>() {{
-//                        add(new Structure("bigboi", null, Color.GREEN, true, 0,0, 800, 800));
-//                    }});
-//                }}));
-//            }});
+//                        add(new Structure("bigboi", null, Color.GREEN, true, 0,0, 800, 800));
+//                    }});
+//                }}));
+//            }});
 
 
 }

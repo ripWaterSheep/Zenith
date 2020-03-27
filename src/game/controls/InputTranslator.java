@@ -1,8 +1,8 @@
-package game.controls;
+package game.controls;
 
 
-import util.Clock;
-import util.geometry.Point;
+import util.Clock;
+import util.geometry.Point;
 
 public class InputTranslator {
 

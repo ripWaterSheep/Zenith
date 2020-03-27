@@ -1,14 +1,14 @@
-package testers;
+package testers;
 
-import game.settings.Settings;
+import game.settings.Settings;
 
-import java.io.IOException;
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class SettingsTester {
     public static void main(String[] args) throws IOException {
-        Settings.generateSettings(0, 0, 0, 0, 0, 0);
-        Settings.applyDefaultSettings();
-        System.out.println(Arrays.toString(Settings.readSettings()));
+        Settings.generateSettings(0, 0, 0, 0, 0, 0);
+        Settings.applyDefaultSettings();
+        System.out.println(Arrays.toString(Settings.readSettings()));
     }
 }

@@ -1,4 +1,4 @@
-package util.enums;
+package util.enums;
 
 public class EntityEnums {
 

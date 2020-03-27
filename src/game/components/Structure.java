@@ -1,24 +1,24 @@
-package game.components;
+package game.components;
 
-import util.BetterImageIcon;
-import util.geometry.Line;
-import util.geometry.Point;
-import util.geometry.Rectangle;
+import util.BetterImageIcon;
+import util.geometry.Line;
+import util.geometry.Point;
+import util.geometry.Rectangle;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.*;
+import java.awt.*;
 
 
 public class Structure extends Component {
 
 
     public Structure(String name, BetterImageIcon image, Color color, boolean isCircle, double x, double y, double width, double height) {
-        super(name, image, color, isCircle, x, y, width, height);
+        super(name, image, color, isCircle, x, y, width, height);
     }
 
 
     public Rectangle getRect() {
-        return new Rectangle(new Line(new Point(x, y), new Point(x + width, y + height)), height);
+        return new Rectangle(new Line(new Point(x, y), new Point(x + width, y + height)), height);
     }
 
 
@@ -36,14 +36,14 @@ public class Structure extends Component {
 
     @Override
     public void draw() {
-        g.setColor(color);
+        g.setColor(color);
 
         if(image != null) {
-            g.drawImage(image.getImage(), (int) x, (int) y, null);
+            g.drawImage(image.getImage(), (int) x, (int) y, null);
         } else if(isCircle) {
-            g.fillOval((int) x, (int) y, (int) width, (int) height);
+            g.fillOval((int) x, (int) y, (int) width, (int) height);
         } else {
-            g.fillRect((int) x, (int) y, (int) width, (int) height);
+            g.fillRect((int) x, (int) y, (int) width, (int) height);
         }
     }
 

@@ -1,33 +1,33 @@
-package main;
+package main;
 
-import game.activity.MainActivity;
-import game.components.Component;
-import util.UtilMethods;
+import game.activity.MainActivity;
+import game.components.Component;
+import util.UtilMethods;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class MainPanel extends JPanel {
 
 
-    private MainActivity mainActivity = new MainActivity();
+    private MainActivity mainActivity = new MainActivity();
 
     public MainPanel() {
-        mainActivity.init(this);
+        mainActivity.init(this);
 
     }
 
 
     @Override
     public void paintComponent(Graphics g) {
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, 1920, 1080);
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 1920, 1080);
 
-        Component.createGraphics(g);
+        Component.createGraphics(g);
 
-        mainActivity.run();
+        mainActivity.run();
 
-        UtilMethods.sleep(10);
-        repaint();
+        UtilMethods.sleep(10);
+        repaint();
     }
 }
